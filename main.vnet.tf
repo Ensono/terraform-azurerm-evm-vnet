@@ -15,4 +15,5 @@ module "avm_res_network_virtualnetwork" {
   ddos_protection_plan    = var.ddos_protection_plan
   subnets                 = local.subnets
   tags                    = var.tags
+  subscription_id         = var.subscription_id
 }

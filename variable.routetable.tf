@@ -14,9 +14,3 @@ variable "routes" {
 
   }
 }
-
-variable "bgp_route_propagation_enabled" {
-  description = "Option to enable BGP route propagation on the Route Table."
-  type        = bool
-  default     = true
-}
