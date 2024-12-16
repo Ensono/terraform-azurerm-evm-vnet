@@ -18,42 +18,48 @@ Please note we have a code of conduct, please follow it in all your interactions
    discussions or implementation details are satisfied.
 
 ### Pre-commit usage
+This repository uses the [pre-commit](https://pre-commit.com/) git hook framework which can update and format some files enforcing our Terraform code module best-practices. This repository has been tested with the following software versions:
+- **Python**: [3.12.8](https://www.python.org/downloads/release/python-3128/)
+- **Pre-commit**: `4.0.1`
+- **Terraform**: [1.9.3](https://releases.hashicorp.com/terraform/1.9.3/)
 
-We recommend using `pre-commit` ([the famous python git hooks tool](https://pre-commit.com/#intro))
-when you start a contribution. It will automatically trigger hooks which ensure our codestyle rules are followed,
-files are formatted and linted, and that your README.md file is proprerly generated and updated.
+Installation is simple and works cross platform. Use an elevated terminal when installing pre-commit. The framework can be installed and configured with a few steps:
 
-Installation is simple and works cross platform. The framework can be installed and configured with a few steps:
+One off actions to install Pre-commit
+1. Install Python `3.12.8` ensuring you enable Add to PATH option on the Windows installer
+2. Install the Pre-commit framework:  `pip3 install pre-commit==4.0.1`
+3. Ensure `bash.exe` can be executed from a PowerShell terminal. If not, try adding `C:\Program Files\Git\bin` to your `Path` environment variable
 
-1. Install Python 3.0
-2. Install the framework:  `pip3 install pre-commit --user`
-3. Within the repo directory, run `pre-commit install` to set up the `pre-commit` git hook
-4. Within the repo directory, run `pre-commit install --hook-type commit-msg` to set up the `commit-msg` git hook
+Only required on new cloned repositories
+1. Within the repo directory, run `pre-commit install` to set up the `pre-commit` git hook
+2. Within the repo directory, run `pre-commit install --hook-type commit-msg` to set up the `commit-msg` git hook
 
-
-Do your changes as usual, hooks will be triggered by `pre-commit` every time you use the `git commit` command.
-
-To have all `pre-commit` hooks working you will have to setup thoses dependencies locally:
-- [terraform](https://releases.hashicorp.com/terraform/)
+To have all `pre-commit` hooks working you will have to setup these dependencies locally. Place these files within a folder that has been added to your `Path` environment variable:
+- [terraform](https://releases.hashicorp.com/terraform/1.9.3/)
 - [tfdocs](https://github.com/terraform-docs/terraform-docs)
 - [tflint](https://github.com/terraform-linters/tflint)
 
+---
+Note:
+<br/>
+To run the `pre-commit` hook against all files run `pre-commit run -a`.
+
+---
+
+<br/>
+
+Make code changes as usual, the Git hooks will be triggered by `pre-commit` every time you use the `git commit` command.
 
 A typical workflow would be:
 
 1. `git pull`: the most recent changes into main from remote
 2. `git checkout -b [branch name]`: create a new branch to make code changes
 3. `git add .`: to stage all changed files
-4. `git commit -m '[commit message]'`: commit code changes, please use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages
+4. `git commit -m '[commit message]'`: commit code changes
 5. `git push`: push commited changes to remote
 
-
----
-Note:
-<br/>
-To run the `pre-commit` hook against all files without staging them, run `pre-commit run -a`.
-
----
+## Conventional Commit
+This repo will use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). There is a Pre-commit hook that will enforce the commit message format.
 
 ## Code of Conduct
 
