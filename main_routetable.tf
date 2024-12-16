@@ -16,5 +16,5 @@ module "route_table" {
       next_hop_in_ip_address = try(var.routes[route_name].next_hop_in_ip_address, null)
     }
   }
-  tags = var.tags
+  tags = var.azure_resource_tags
 }

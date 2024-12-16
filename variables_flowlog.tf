@@ -1,7 +1,7 @@
 variable "flow_log_enabled" {
   description = "Provision network watcher flow logs."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "flow_log_logging_enabled" {

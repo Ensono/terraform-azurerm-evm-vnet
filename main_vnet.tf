@@ -15,6 +15,6 @@ module "avm_res_network_virtualnetwork" {
   bgp_community           = var.bgp_community
   ddos_protection_plan    = var.ddos_protection_plan
   subnets                 = local.subnets
-  tags                    = var.tags
+  tags                    = var.azure_resource_tags
   subscription_id         = var.subscription_id
 }

@@ -11,5 +11,5 @@ resource "azurerm_network_watcher_flow_log" "flow_log" {
     enabled = var.flow_log_retention_policy_enabled
     days    = var.flow_log_retention_policy_days
   }
-  tags = var.tags
+  tags = var.azure_resource_tags
 }

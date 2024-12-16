@@ -27,5 +27,5 @@ resource "azurerm_network_security_group" "nsg" {
       description                                = security_rule.value.description
     }
   }
-  tags = var.tags
+  tags = var.azure_resource_tags
 }

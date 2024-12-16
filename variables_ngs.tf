@@ -18,4 +18,5 @@ variable "nsg_rules" {
     destination_application_security_group_ids = optional(list(string), [])
     description                                = optional(string, "")
   }))
+  default = {}
 }

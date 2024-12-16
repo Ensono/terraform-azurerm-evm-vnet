@@ -20,5 +20,5 @@ module "avm_res_storage_storageaccount" {
   enable_telemetry                  = var.enable_telemetry
   nfsv3_enabled                     = var.nfsv3_enabled
   public_network_access_enabled     = var.public_network_access_enabled
-  tags                              = var.tags
+  tags                              = var.azure_resource_tags
 }
