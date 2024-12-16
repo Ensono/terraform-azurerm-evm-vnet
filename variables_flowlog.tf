@@ -19,5 +19,5 @@ variable "flow_log_retention_policy_enabled" {
 variable "flow_log_retention_policy_days" {
   description = "The number of days to retain flow log records."
   type        = number
-  default     = 31
+  default     = 91
 }

@@ -1,7 +1,8 @@
 module "avm_res_network_virtualnetwork" {
   source              = "Azure/avm-res-network-virtualnetwork/azurerm"
+  version             = "0.7.1"
   resource_group_name = var.resource_group_name
-  location            = var.location
+  location            = var.azure_location
   name                = var.vnet_name
   enable_telemetry    = var.enable_telemetry
   address_space       = var.address_space

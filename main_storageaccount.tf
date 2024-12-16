@@ -1,11 +1,13 @@
-module "avm-res-storage-storageaccount" {
+module "avm_res_storage_storageaccount" {
   count                             = var.flow_log_enabled ? 1 : 0
   source                            = "Azure/avm-res-storage-storageaccount/azurerm"
+  version                           = "0.2.9"
   resource_group_name               = var.resource_group_name
-  location                          = var.location
+  location                          = var.azure_location
   account_replication_type          = var.account_replication_type
   account_tier                      = var.account_tier
   account_kind                      = var.account_kind
+  access_tier                       = var.access_tier
   name                              = var.storageaccount_name
   https_traffic_only_enabled        = var.https_traffic_only_enabled
   default_to_oauth_authentication   = var.default_to_oauth_authentication
