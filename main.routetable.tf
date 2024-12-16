@@ -5,7 +5,7 @@ module "route_table" {
   location                      = var.location
   resource_group_name           = var.resource_group_name
   enable_telemetry              = var.enable_telemetry
-  bgp_route_propagation_enabled = coalesce(each.value.bgp_route_propagation_enabled, var.bgp_route_propagation_enabled)
+  bgp_route_propagation_enabled = each.value.bgp_route_propagation_enabled
   routes = {
     for route_name in try(each.value.route_names, []) :
     route_name => {
