@@ -11,9 +11,15 @@ variable "address_space" {
 }
 
 variable "dns_servers" {
-  type        = set(string)
-  description = "(Optional) Specifies a set of IP addresses representing DNS servers."
+  type = object({
+    dns_servers = set(string)
+  })
   default     = null
+  description = <<DESCRIPTION
+(Optional) Specifies a list of IP addresses representing DNS servers.
+
+- `dns_servers`: Set of IP addresses of DNS servers.
+DESCRIPTION
 }
 
 variable "enable_vm_protection" {

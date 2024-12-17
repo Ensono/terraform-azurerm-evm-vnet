@@ -50,7 +50,7 @@ Examples can be found at the bottom taken from the `examples` directory.
 | cross\_tenant\_replication\_enabled | (Optional) Should cross Tenant replication be enabled? Defaults to `false`. | `bool` | `true` | no |
 | ddos\_protection\_plan | Specifies an AzureNetwork DDoS Protection Plan.<br/><br/>- `id`: The ID of the DDoS Protection Plan. (Required)<br/>- `enable`: Enables or disables the DDoS Protection Plan on the Virtual Network. (Required) | <pre>object({<br/>    id     = string<br/>    enable = bool<br/>  })</pre> | `null` | no |
 | default\_to\_oauth\_authentication | (Optional) Default to Azure Active Directory authorization in the Azure portal when accessing the Storage Account. The default value is `false` | `bool` | `false` | no |
-| dns\_servers | (Optional) Specifies a set of IP addresses representing DNS servers. | `set(string)` | `null` | no |
+| dns\_servers | (Optional) Specifies a list of IP addresses representing DNS servers.<br/><br/>- `dns_servers`: Set of IP addresses of DNS servers. | <pre>object({<br/>    dns_servers = set(string)<br/>  })</pre> | `null` | no |
 | enable\_telemetry | This variable controls whether or not telemetry is enabled for the module. | `bool` | `false` | no |
 | enable\_vm\_protection | Enable VM Protection for the virtual network | `bool` | `false` | no |
 | encryption | (Optional) Specifies the encryption settings for the virtual network. | <pre>object({<br/>    enabled     = bool<br/>    enforcement = string<br/>  })</pre> | `null` | no |
@@ -78,11 +78,8 @@ Examples can be found at the bottom taken from the `examples` directory.
 
 | Name | Description |
 |------|-------------|
-| azure\_location | DELETE: temporary to satisfy TFLint rules |
-| azure\_resource\_tags | DELETE: temporary to satisfy TFLint rules |
 | name | The resource name of the virtual network. |
 | nsg\_ids | The IDs of the network security groups |
-| resource\_group\_name | DELETE: temporary to satisfy TFLint rules |
 | resource\_guid | The ID of the virtual network. |
 | resource\_id | The resource ID of the virtual network. |
 | route\_table\_ids | The IDs of the route tables |
