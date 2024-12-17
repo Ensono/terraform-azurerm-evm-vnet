@@ -8,8 +8,6 @@ Sensitive inputs should be passed as pipeline environment variables
 
 azure_subscription_id = "xxx"
 */
-azure_subscription_id = "cea31a73-c42c-4b17-b83d-c629142bf942"
-
 
 vnet_name     = "example-vnet"
 address_space = ["10.0.0.0/16"]
