@@ -1,14 +1,9 @@
-output "name" {
+output "vnet_name" {
   description = "The resource name of the virtual network."
   value       = module.avm_res_network_virtualnetwork.name
 }
 
-output "resource_guid" {
-  description = "The ID of the virtual network."
-  value       = module.avm_res_network_virtualnetwork.resource.output.properties.resourceGuid
-}
-
-output "resource_id" {
+output "vnet_resource_id" {
   description = "The resource ID of the virtual network."
   value       = module.avm_res_network_virtualnetwork.resource_id
 }

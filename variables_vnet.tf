@@ -71,12 +71,6 @@ Specifies an AzureNetwork DDoS Protection Plan.
 DESCRIPTION
 }
 
-# variable "tags" {
-#   description = "A map of tags to add to all resources"
-#   type        = map(string)
-#   default     = {}
-# }
-
 variable "subnets" {
   description = "A map of subnets to create"
   type = map(object({

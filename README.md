@@ -78,12 +78,11 @@ Examples can be found at the bottom taken from the `examples` directory.
 
 | Name | Description |
 |------|-------------|
-| name | The resource name of the virtual network. |
 | nsg\_ids | The IDs of the network security groups |
-| resource\_guid | The ID of the virtual network. |
-| resource\_id | The resource ID of the virtual network. |
 | route\_table\_ids | The IDs of the route tables |
 | subnets | Information about the subnets created in the module. |
+| vnet\_name | The resource name of the virtual network. |
+| vnet\_resource\_id | The resource ID of the virtual network. |
 
 ## Examples
 ### Main
@@ -99,7 +98,6 @@ Sensitive inputs should be passed as pipeline environment variables
 
 azure_subscription_id = "xxx"
 */
-
 
 vnet_name     = "example-vnet"
 address_space = ["10.0.0.0/16"]

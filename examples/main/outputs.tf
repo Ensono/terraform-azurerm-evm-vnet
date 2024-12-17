@@ -6,15 +6,10 @@ output "resource_group_name_example" {
 
 output "name" {
   description = "The resource name of the virtual network."
-  value       = module.example.name
-}
-
-output "resource_guid" {
-  description = "The ID of the virtual network."
-  value       = module.example.resource_guid
+  value       = module.example.vnet_name
 }
 
 output "resource_id" {
   description = "The resource ID of the virtual network."
-  value       = module.example.resource_id
+  value       = module.example.vnet_resource_id
 }
