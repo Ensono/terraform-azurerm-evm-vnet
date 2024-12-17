@@ -14,8 +14,6 @@ output "subnets" {
     for subnet in module.avm_res_network_virtualnetwork.subnets : subnet.name => {
       resource_id = subnet.resource_id
       name        = subnet.name
-      #   nsg_id         = subnet.resource.body.properties.networkSecurityGroup != null ? subnet.resource.body.properties.networkSecurityGroup.id : null
-      #   route_table_id = subnet.resource.body.properties.routeTable != null ? subnet.resource.body.properties.routeTable.id : null
     }
   }
 }
