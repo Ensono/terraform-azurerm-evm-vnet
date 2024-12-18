@@ -1,4 +1,4 @@
-# Ensono Verified Module (EVM) - Azure Terraform [REPLACE WITH MODULE NAME]
+# Ensono Verified Module (EVM) - Azure Terraform VNET
 An Azure Terraform Ensono Verified Module (EVM) designed to abstract the complexity of provisioning resources related to Azure Virtual Networks, Subnets, NSGs, Routes and Flowlogs.
 
 ---
@@ -156,14 +156,6 @@ subnets = {
     route_names                                   = ["Default"]
     private_link_service_network_policies_enabled = false
     route_names                                   = ["Default"]
-  }
-  AzureBastionSubnet = {
-    name                                          = "AzureBastionSubnet"
-    address_prefixes                              = ["10.0.6.0/26"]
-    default_outbound_access_enabled               = false
-    private_endpoint_network_policies             = "Disabled"
-    private_link_service_network_policies_enabled = false
-
   }
 }
 
