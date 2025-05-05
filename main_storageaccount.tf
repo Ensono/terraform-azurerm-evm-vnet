@@ -1,7 +1,7 @@
 module "avm_res_storage_storageaccount" {
   count                             = var.flow_log_enabled ? 1 : 0
   source                            = "Azure/avm-res-storage-storageaccount/azurerm"
-  version                           = "0.5.0"
+  version                           = "0.6.1"
   resource_group_name               = var.resource_group_name
   location                          = var.azure_location
   account_replication_type          = var.account_replication_type
