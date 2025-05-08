@@ -1,7 +1,7 @@
 module "route_table" {
   source                        = "Azure/avm-res-network-routetable/azurerm"
   version                       = "0.3.1"
-  for_each                      = { for k, v in var.subnets : k => v if k != "AzureBastionSubnet" }
+  for_each                      = var.enable_route_tables ? { for k, v in var.subnets : k => v if k != "AzureBastionSubnet" } : {}
   name                          = "rt-${var.vnet_name}-${each.value.name}"
   location                      = var.azure_location
   resource_group_name           = var.resource_group_name
