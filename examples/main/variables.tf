@@ -54,3 +54,10 @@ variable "azure_resource_tags" {
   sensitive   = false
   default     = {}
 }
+
+variable "enable_route_tables" {
+  description = "Optional: Enable route tables for subnets."
+  type        = bool
+  sensitive   = false
+  default     = true
+}
