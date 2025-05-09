@@ -97,3 +97,9 @@ variable "subscription_id" {
   default     = null
   description = "(Optional) Subscription ID passed in by an external process.  If this is not supplied, then the configuration either needs to include the subscription ID, or needs to be supplied properties to create the subscription."
 }
+
+variable "firewall_ip_address" {
+  type        = string
+  default     = null
+  description = "(Optional) The IP address of the firewall. This is used for routing."
+}
