@@ -73,3 +73,10 @@ variable "routes" {
   default     = {}
   description = "(Optional) A map of route objects to create on the route table. "
 }
+
+variable "enable_route_tables" {
+  description = "Optional: Enable route tables for subnets."
+  type        = bool
+  sensitive   = false
+  default     = true
+}
