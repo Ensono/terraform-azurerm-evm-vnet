@@ -1,13 +1,9 @@
-company_name_short      = "ens"
-subscription_name_short = "sub"
-module_names            = ["example"]
-azure_location          = "uksouth"
-
 /*
-Sensitive inputs should be passed as pipeline environment variables
+  sensitive inputs - DO NOT COMMIT WITH VALUES
+  azure_subscription_id
+*/
 
 azure_subscription_id = "xxx"
-*/
 
 vnet_name     = "example-vnet"
 address_space = ["10.0.0.0/16"]
@@ -35,9 +31,8 @@ subnets = {
       }
     }]
     service_endpoints = ["Microsoft.Storage", "Microsoft.KeyVault"]
-    # nsg_rule_names                                = ["allow_https", "allow_rdp"]
-    nsg_rule_names = []
-    route_names    = []
+    nsg_rule_names    = []
+    route_names       = []
 
   }
   subnet3 = {

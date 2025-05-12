@@ -99,6 +99,11 @@ subscription_name_short = "sub"
 module_names            = ["example"]
 azure_location          = "uksouth"
 
+client_id             = ""
+client_secret         = ""
+tenant_id             = ""
+azure_subscription_id = ""
+
 /*
 Sensitive inputs should be passed as pipeline environment variables
 
@@ -276,6 +281,7 @@ module "example" {
   routes              = var.routes
   storageaccount_name = module.naming["example"].storage_account.name
   azure_resource_tags = local.resource_tags
+  enable_route_tables = var.enable_route_tables
 }
 ```
 <!-- END_TF_DOCS -->
