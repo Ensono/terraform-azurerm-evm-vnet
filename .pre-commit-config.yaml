@@ -41,5 +41,5 @@ repos:
       - id: checkov_diff
         language_version: python3.10
         args:
-          - "-f"
+          - '-f'
         stages: [pre-commit]
