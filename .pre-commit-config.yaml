@@ -39,7 +39,7 @@ repos:
     rev: '3.2.334'
     hooks:
       - id: checkov_diff
-        language_version: python3.10
+        language_version: python3.12
         args:
           - '-f'
         stages: [pre-commit]
