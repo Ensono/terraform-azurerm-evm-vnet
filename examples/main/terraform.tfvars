@@ -43,7 +43,6 @@ subnets = {
     private_link_service_network_policies_enabled = true
     service_endpoints                             = ["Microsoft.Storage", "Microsoft.KeyVault"]
     nsg_rule_names                                = ["allow_http", "allow_ssh", "deny_all_outbound"]
-
   }
   GatewaySubnet = {
     name                                          = "GatewaySubnet"
@@ -62,8 +61,17 @@ subnets = {
     private_link_service_network_policies_enabled = false
     route_names                                   = ["Default"]
   }
+  AzureBastionSubnet = {
+    name                                          = "AzureBastionSubnet"
+    address_prefixes                              = ["10.0.10.0/24"]
+    default_outbound_access_enabled               = false
+    private_endpoint_network_policies             = "Disabled"
+    route_names                                   = ["Default"]
+    private_link_service_network_policies_enabled = false
+    route_names                                   = ["Default"]
+    nsg_rule_names                                = ["allow_http", "allow_ssh", "deny_all_outbound"]
+  }
 }
-
 
 nsg_rules = {
   allow_ssh = {
@@ -151,5 +159,4 @@ routes = {
     address_prefix = "0.0.0.0/0"
     next_hop_type  = "Internet"
   }
-
 }
