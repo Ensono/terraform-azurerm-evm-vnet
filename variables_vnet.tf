@@ -103,3 +103,9 @@ variable "firewall_ip_address" {
   default     = null
   description = "(Optional) The IP address of the firewall. This is used for routing."
 }
+
+variable "AzureBastionSubnet" {
+  type        = string
+  default     = null
+  description = "(Optional) The address prefix for the Azure Bastion subnet. This is used for routing."
+}

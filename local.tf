@@ -1,4 +1,5 @@
 locals {
+  bastionSubnetAddress = var.subnets["AzureBastionSubnet"] != null ? (var.subnets["AzureBastionSubnet"].address_prefixes)[0] : var.subnets["AzureBastionSubnet"]
   subnets = {
     for k, v in var.subnets : k => merge(
       v,
@@ -28,6 +29,12 @@ locals {
       name           = "UDR-Default-0.0.0.0_0"
       address_prefix = "0.0.0.0/0"
       next_hop_type  = "Internet"
+    }
+
+    "UDR-Default-Bastion" = {
+      name           = "UDR-Bastion-${replace(tolist(var.subnets["AzureBastionSubnet"].address_prefixes)[0], "/", "_")}"
+      address_prefix = tolist(var.subnets["AzureBastionSubnet"].address_prefixes)[0]
+      next_hop_type  = "VirtualNetwork"
     }
 
     "UDR-Default-Firewall" = {
