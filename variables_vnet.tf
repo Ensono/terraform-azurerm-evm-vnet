@@ -85,6 +85,11 @@ variable "subnets" {
         name = string
       })
     })))
+    nat_gateway = optional(object(
+      {
+        id = string
+      }
+    ))
     service_endpoints             = optional(list(string))
     nsg_rule_names                = optional(list(string), [])
     route_names                   = optional(list(string), [])
