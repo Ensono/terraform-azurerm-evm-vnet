@@ -85,15 +85,15 @@ variable "subnets" {
         name = string
       })
     })))
+    service_endpoints             = optional(list(string))
+    nsg_rule_names                = optional(list(string), [])
+    route_names                   = optional(list(string), [])
+    bgp_route_propagation_enabled = optional(bool, true) # Option to enable BGP route propagation for its Route Table.
     nat_gateway = optional(object(
       {
         id = string
       }
     ))
-    service_endpoints             = optional(list(string))
-    nsg_rule_names                = optional(list(string), [])
-    route_names                   = optional(list(string), [])
-    bgp_route_propagation_enabled = optional(bool, true) # Option to enable BGP route propagation for its Route Table.
   }))
 }
 
