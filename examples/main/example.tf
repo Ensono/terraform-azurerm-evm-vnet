@@ -7,7 +7,6 @@ module "example" {
   subnets             = var.subnets
   nsg_rules           = var.nsg_rules
   routes              = var.routes
-  storageaccount_name = module.naming_ptn_01.storage_account.name_unique
   azure_resource_tags = local.resource_tags
   enable_route_tables = var.enable_route_tables
 }
