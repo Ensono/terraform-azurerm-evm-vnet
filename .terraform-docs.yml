@@ -38,11 +38,13 @@ content: |-
   ### Main
 
   #### terraform.tfvars
+
   ```hcl
   {{ include "examples/main/terraform.tfvars" }}
   ```
 
   #### example.tf
+
   ```hcl
   {{ include "examples/main/example.tf" }}
   ```

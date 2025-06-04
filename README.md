@@ -69,6 +69,7 @@ Examples can be found at the bottom taken from the [examples](./examples) direct
 ### Main
 
 #### terraform.tfvars
+
 ```hcl
 /*
   sensitive inputs - DO NOT COMMIT WITH VALUES
@@ -228,6 +229,7 @@ routes = {
 ```
 
 #### example.tf
+
 ```hcl
 module "example" {
   source              = "../../"
