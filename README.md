@@ -1,5 +1,6 @@
 # Ensono Verified Module (EVM) - Azure Terraform VNET
-An Azure Terraform Ensono Verified Module (EVM) designed to abstract the complexity of provisioning resources related to Azure Virtual Networks, Subnets, NSGs, Routes and Flowlogs.
+
+An Azure Terraform Ensono Verified Module (EVM) designed to abstract the complexity of provisioning resources related to Azure Virtual Networks, Subnets, NSGs and Routes.
 
 ---
 
