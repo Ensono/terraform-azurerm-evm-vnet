@@ -19,5 +19,3 @@ Link to builds/artifacts/etc.
 ## 🕵️ How to test
 
 Notes for QA
-
-@ russellseymour @williamayerst @IamAndyW

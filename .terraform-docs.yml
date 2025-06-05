@@ -14,13 +14,14 @@ sections:
 
 content: |-
   ## Contributing
+
   This repository uses the [pre-commit](https://pre-commit.com/) git hook framework which can update and format some files enforcing our Terraform code module best-practices.
 
   More details are available in the [CONTRIBUTING.md](./CONTRIBUTING.md#pull-request-process) file.
 
   ## Usage
-  Examples can be found at the bottom taken from the `examples` directory.
 
+  Examples can be found at the bottom taken from the [examples](./examples) directory.
 
   {{ .Providers }}
 
@@ -33,13 +34,17 @@ content: |-
   {{ .Outputs }}
 
   ## Examples
+
   ### Main
+
   #### terraform.tfvars
+
   ```hcl
   {{ include "examples/main/terraform.tfvars" }}
   ```
 
   #### example.tf
+
   ```hcl
   {{ include "examples/main/example.tf" }}
   ```
