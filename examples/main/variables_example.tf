@@ -30,16 +30,6 @@ variable "subnets" {
   }))
 }
 
-variable "storageaccount_name" {
-  type        = string
-  description = "The name of the resource."
-  default     = "defaultstorageacct" # Default value that meets the validation criteria. Provide a valid name if flow_log_enabled is true.
-  validation {
-    condition     = can(regex("^[a-z0-9]{3,24}$", var.storageaccount_name))
-    error_message = "The name must be between 3 and 24 characters, valid characters are lowercase letters and numbers."
-  }
-}
-
 variable "nsg_rules" {
   description = "A map of NSG rules"
   type = map(object({
