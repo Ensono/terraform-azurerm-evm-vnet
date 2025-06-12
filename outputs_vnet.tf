@@ -14,12 +14,20 @@ output "vnet_name" {
 }
 
 output "subnets" {
-  description = "Information about the subnets created in the module."
+  description = "Detailed information about each subnet."
   value = {
     for subnet in module.avm_res_network_virtualnetwork.subnets : subnet.name => {
-      resource_id = subnet.resource_id
-      name        = subnet.name
-
+      resource_id                                   = subnet.resource_id
+      name                                          = subnet.name
+      address_prefix                                = subnet.address_prefix
+      default_gateway                               = cidrhost(subnet.address_prefix, 1)
+      network_security_group_id                     = subnet.network_security_group_id
+      route_table_id                                = subnet.route_table_id
+      service_endpoints                             = subnet.service_endpoints
+      delegation                                    = try(subnet.delegation, null)
+      private_endpoint_network_policies_enabled     = try(subnet.private_endpoint_network_policies_enabled, null)
+      private_link_service_network_policies_enabled = try(subnet.private_link_service_network_policies_enabled, null)
+      nat_gateway_id                                = try(subnet.nat_gateway_id, null)
     }
   }
 }
