@@ -59,8 +59,9 @@ Examples can be found at the bottom taken from the [examples](./examples) direct
 | Name | Description |
 |------|-------------|
 | nsg\_ids | The IDs of the network security groups |
+| resource\_group\_name | The name of the resource group where the virtual network is created. |
 | route\_table\_ids | The IDs of the route tables |
-| subnets | Information about the subnets created in the module. |
+| subnets | Detailed information about each subnet. |
 | vnet\_name | The resource name of the virtual network. |
 | vnet\_resource\_id | The resource ID of the virtual network. |
 
