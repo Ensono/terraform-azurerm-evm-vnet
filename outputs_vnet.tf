@@ -1,11 +1,16 @@
-output "vnet_name" {
-  description = "The resource name of the virtual network."
-  value       = module.avm_res_network_virtualnetwork.name
-}
-
 output "vnet_resource_id" {
   description = "The resource ID of the virtual network."
   value       = module.avm_res_network_virtualnetwork.resource_id
+}
+
+output "resource_group_name" {
+  description = "The name of the resource group where the virtual network is created."
+  value       = module.avm_res_network_virtualnetwork.resource_group_name
+}
+
+output "vnet_name" {
+  description = "The resource name of the virtual network."
+  value       = module.avm_res_network_virtualnetwork.name
 }
 
 output "subnets" {
@@ -14,6 +19,7 @@ output "subnets" {
     for subnet in module.avm_res_network_virtualnetwork.subnets : subnet.name => {
       resource_id = subnet.resource_id
       name        = subnet.name
+
     }
   }
 }
