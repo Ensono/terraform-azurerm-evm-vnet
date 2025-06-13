@@ -5,7 +5,7 @@ output "vnet_resource_id" {
 
 output "resource_group_name" {
   description = "The name of the resource group where the virtual network is created."
-  value       = module.avm_res_network_virtualnetwork.resource_group_name
+  value       = var.resource_group_name
 }
 
 output "vnet_name" {
@@ -19,15 +19,17 @@ output "subnets" {
     for subnet in module.avm_res_network_virtualnetwork.subnets : subnet.name => {
       resource_id                                   = subnet.resource_id
       name                                          = subnet.name
-      address_prefix                                = subnet.address_prefix
-      default_gateway                               = cidrhost(subnet.address_prefix, 1)
-      network_security_group_id                     = subnet.network_security_group_id
-      route_table_id                                = subnet.route_table_id
-      service_endpoints                             = subnet.service_endpoints
-      delegation                                    = try(subnet.delegation, null)
-      private_endpoint_network_policies_enabled     = try(subnet.private_endpoint_network_policies_enabled, null)
-      private_link_service_network_policies_enabled = try(subnet.private_link_service_network_policies_enabled, null)
-      nat_gateway_id                                = try(subnet.nat_gateway_id, null)
+      address_prefix                                = try(subnet.resource.body.properties.addressPrefixes[0], null)
+      address_prefixes                              = try(subnet.resource.body.properties.addressPrefixes, [])
+      default_gateway                               = try(cidrhost(subnet.resource.body.properties.addressPrefixes[0], 1), null)
+      network_security_group_id                     = try(subnet.resource.body.properties.networkSecurityGroup.id, null)
+      route_table_id                                = try(subnet.resource.body.properties.routeTable.id, null)
+      delegation                                    = try(subnet.resource.body.properties.delegations, null)
+      delegated_service_name                        = try(subnet.resource.body.properties.delegations[0].properties.serviceName, null)
+      private_endpoint_network_policies_enabled     = try(subnet.resource.body.properties.privateEndpointNetworkPolicies, null)
+      private_link_service_network_policies_enabled = try(subnet.resource.body.properties.privateLinkServiceNetworkPolicies, null)
+      service_endpoints                             = try([for s in subnet.resource.body.properties.serviceEndpoints : s.service], [])
+      nat_gateway_id                                = try(subnet.resource.body.properties.natGateway.id, null)
     }
   }
 }
