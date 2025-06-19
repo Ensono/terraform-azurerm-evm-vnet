@@ -15,6 +15,10 @@ repos:
           - --unsafe
       - id: detect-private-key
         stages: [pre-commit]
+      - id: mixed-line-ending
+        stages: [pre-commit]
+        args:
+          - --fix=lf
   # requires the dependencies installing
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.96.2
