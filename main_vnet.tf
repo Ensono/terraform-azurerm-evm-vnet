@@ -1,6 +1,6 @@
 module "avm_res_network_virtualnetwork" {
   source                  = "Azure/avm-res-network-virtualnetwork/azurerm"
-  version                 = "0.8.1"
+  version                 = "0.9.1"
   resource_group_name     = var.resource_group_name
   location                = var.azure_location
   name                    = var.vnet_name
