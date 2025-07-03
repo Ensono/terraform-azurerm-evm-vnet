@@ -23,7 +23,7 @@ Examples can be found at the bottom taken from the [examples](./examples) direct
 
 | Name | Source | Version |
 |------|--------|---------|
-| avm\_res\_network\_virtualnetwork | Azure/avm-res-network-virtualnetwork/azurerm | 0.8.1 |
+| avm\_res\_network\_virtualnetwork | Azure/avm-res-network-virtualnetwork/azurerm | 0.9.2 |
 | route\_table | Azure/avm-res-network-routetable/azurerm | 0.4.1 |
 
 ## Resources
